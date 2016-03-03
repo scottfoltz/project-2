@@ -16,7 +16,6 @@ using namespace std;
 
 unsigned short port_number;
 string server_address;
-char [] = filename;
 string filename;
 
 bool ProcessOptions(int argc, char * argv[], string format_string)
@@ -34,6 +33,7 @@ bool ProcessOptions(int argc, char * argv[], string format_string)
 				cerr << "	-s server_address ... defaults to 127.0.0.1" << endl;
 				cerr << "	-p port_number ... defaults to 4095" << endl;
 				cerr << "   -f file name ... include .txt" << endl;
+					retval = false;
 			case 's':
 				server_address = string(optarg);
 				break;
@@ -45,6 +45,8 @@ bool ProcessOptions(int argc, char * argv[], string format_string)
 				break;
 		}
 	}
+	return retval;
+
 }
 
 
@@ -57,4 +59,6 @@ int main(int argc, char * argv[])
 	cout << "Client targeting server at " << server_address << " on port " << port_number << endl;
 
 	cout << filename << endl;
+
+	return 0;
 }
