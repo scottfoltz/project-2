@@ -54,7 +54,6 @@ bool ProcessOptions(int argc, char * argv[], string format_string)
 void ReadAndWrite (string filename){
 
     FILE* fd = NULL;
-    //memset(buff,0,sizeof(buff));
 
     //PERRYS TRANSFER LOOP
     const int BUFFER_SIZE = 1024;
@@ -94,8 +93,8 @@ int main(int argc, char * argv[])
 
 	cout << "Client targeting server at " << server_address << " on port " << port_number << endl;
 
-	ReadAndWrite(filename);
 	//Ensure the file specified can be opened for reading. 
+	ReadAndWrite(filename);
 
 	return 0;
 }
